@@ -1,5 +1,5 @@
 {
-  "name": "educhain-agent-kit",
+  "name": "blockmate",
   "version": "1.0.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -9,7 +9,8 @@
     "test:coverage": "vitest run --coverage",
     "prepare": "npm run build",
     "build": "tsc",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "start": "ts-node src/index.ts"
   },
   "keywords": [
     "educhain",
@@ -20,7 +21,7 @@
   ],
   "author": "Rodwell Leo",
   "license": "MIT",
-  "description": "EduChain Agent Kit is a collection of LangChain agents and tools for building educational applications. It provides a set of pre-built agents and tools that can be easily integrated into your own applications, allowing you to quickly build and deploy educational solutions on-chain.",
+  "description": "BlockMate is a collection of LangChain agents and tools for building Educational Decentralized Applications. It provides a set of pre-built agents and tools that can be easily integrated into your own applications, allowing you to quickly build and deploy educational solutions on the EduChain blockchain.",
   "dependencies": {
     "@langchain/community": "^0.3.40",
     "@langchain/core": "^0.3.44",

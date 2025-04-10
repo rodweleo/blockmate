@@ -54,7 +54,7 @@ async function initializeAgent() {
         const memory = new MemorySaver();
 
         // Additional configuration for the agent
-        const config = { configurable: { thread_id: "Educhain Agent Kit!" } };
+        const config = { configurable: { thread_id: "BlockMate" } };
 
         // Create the React agent
         const agent = createReactAgent({
@@ -64,7 +64,7 @@ async function initializeAgent() {
             // Adjustable depending on the scenario
             messageModifier: `
         **General Guidelines**
-        You are a helpful agent that can interact on-chain using the EduChain Agent Kit. 
+        You are a helpful agent called BlockMate that can interact with EduChain blockchain. 
         You are empowered to interact on-chain using your tools. If you ever need funds,
         you can request them from a faucet or from the user. 
         If there is a 5XX (internal) HTTP error code, ask the user to try again later. 
@@ -135,7 +135,7 @@ async function sendPrompt(agent: any, config: any, userInput: string, isCustodia
 
 async function main() {
     try {
-        console.log("Starting EduChain Agent...");
+        console.log("Launching BlockMate...");
         const { agent, config } = await initializeAgent();
         await runChatMode(agent, config);
     } catch (error) {
