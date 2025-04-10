@@ -1,5 +1,4 @@
 
-import fs from "fs"
 import { HumanMessage } from "@langchain/core/messages";
 import { ChatGoogleGenerativeAI } from "@langchain/google-genai";
 import { MemorySaver } from "@langchain/langgraph";
@@ -37,7 +36,8 @@ async function initializeAgent() {
     try {
 
         const llm = new ChatGoogleGenerativeAI({
-            model: "gemini-2.0-flash"
+            model: "gemini-2.0-flash",
+            temperature: 0.2
         });
 
         // Initialize EduchainAgentKit
@@ -65,7 +65,7 @@ async function initializeAgent() {
         you can request them from a faucet or from the user. 
         If there is a 5XX (internal) HTTP error code, ask the user to try again later. 
         If someone asks you to do something you can't do with your available tools, you 
-        must say so, and encourage them to implement it themselves with the EduChain Agent Kit.
+        must say so, and encourage them to reach out to technical support to discuss further.
         Keep your responses concise and helpful.
         
         **Token Creation Rules**:

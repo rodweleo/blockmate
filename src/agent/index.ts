@@ -1,8 +1,8 @@
-import { get_token_info } from "../tools/queries";
-import { get_token_list } from "../tools/queries/tokens";
-import { get_smart_contract } from "../tools/smart-contracts/get_smart_contract";
-import { create_wallet, get_nft_balance, send_edu } from "../tools/wallet";
-import { NftBalanceResponse, SmartContract, TokenInfo, TransactionSummary, WalletInfo } from "../types";
+import { get_token_info, get_token_list } from "../tools/tokens/queries";
+import {create_fungible_token, create_nft} from "../tools/tokens/transactions"
+import { get_smart_contract } from "../tools/smart-contracts";
+import { create_wallet, get_nft_balance, getWalletBalance, send_edu } from "../tools/wallet";
+import { NftBalanceResponse, SmartContract, TokenInfo, TokenOptions, TransactionSummary, WalletInfo } from "@/types";
 
 export class EduchainAgentKit {
 
@@ -31,5 +31,17 @@ export class EduchainAgentKit {
 
     async sendEdu(privateKey: string, toAddress: string, amount: string): Promise<TransactionSummary> {
         return send_edu(privateKey, toAddress, amount)
+    }
+
+    async getWalletBalance(walletAddress: `0x${string}`): Promise<string> {
+        return getWalletBalance(walletAddress)
+    }
+
+    async createFungibleToken(options: TokenOptions){
+        return create_fungible_token(options)
+    }
+
+    async createNFT(options: TokenOptions) {
+        return create_nft(options)
     }
 }

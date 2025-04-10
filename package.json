@@ -4,8 +4,9 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "test-vitest": "vitest run",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
     "prepare": "npm run build",
     "build": "tsc",
     "prepublishOnly": "npm run build"
@@ -21,14 +22,20 @@
   "license": "MIT",
   "description": "EduChain Agent Kit is a collection of LangChain agents and tools for building educational applications. It provides a set of pre-built agents and tools that can be easily integrated into your own applications, allowing you to quickly build and deploy educational solutions on-chain.",
   "dependencies": {
-    "@langchain/core": "^0.3.43",
+    "@langchain/community": "^0.3.40",
+    "@langchain/core": "^0.3.44",
     "@langchain/google-genai": "^0.2.2",
     "@langchain/langgraph": "^0.2.63",
+    "@langchain/openai": "^0.5.5",
+    "@openzeppelin/contracts": "^5.2.0",
     "dotenv": "^16.4.7",
     "ethers": "^6.13.5",
+    "hardhat": "^2.22.19",
     "vitest": "^3.1.1"
   },
   "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@nomicfoundation/hardhat-verify": "^2.0.13",
     "@types/node": "^22.14.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3"

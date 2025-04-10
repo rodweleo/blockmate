@@ -9,6 +9,8 @@ export const send_edu = async (
     amount: string
 ): Promise<TransactionSummary> => {
     try {
+
+
         const wallet = new ethers.Wallet(privateKey, eduTestnetProvider);
 
         // Convert amount to wei

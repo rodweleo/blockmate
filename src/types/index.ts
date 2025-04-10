@@ -1,4 +1,6 @@
 
+export type TokenType = 'FUNGIBLE' | 'NON-FUNGIBLE';
+
 export type TokenInfo = {
     address: string;
     circulating_market_cap: number | null;
@@ -85,3 +87,14 @@ export type TransactionSummary = {
     to: string;
     amount: string | number;
 };
+
+export type TokenOptions = {
+    name: string;
+    symbol: string;
+    initialSupply?: number;
+    maxSupply?: number;
+    decimals?: number;
+    signer?: string;
+    type?: TokenType;
+    baseURI? : string;
+}

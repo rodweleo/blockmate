@@ -1,7 +1,7 @@
 
 
 import { Tool } from "@langchain/core/tools";
-import { EduchainAgentKit } from "../../../agent";
+import { EduchainAgentKit } from "@/agent";
 
 export class EduchainGetTokensListTool extends Tool {
     name = 'educhain_get_tokens_tool'
