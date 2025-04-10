@@ -5,11 +5,10 @@ BlockMate is a collection of LangChain agents and tools for building Decentraliz
 
 ## Intreractive Demos
 ## 🎥 BlockMate Demo – Part 1
-
-[Watch the First Demo](https://www.loom.com/share/4fc6808b832e4c84a35f557f5142dbb9)
+https://www.loom.com/share/4fc6808b832e4c84a35f557f5142dbb9
 
 ### 🎥 BlockMate Demo – Part 2
-[Watch the continous of part 1](https://www.loom.com/share/cd00a985adce4ebcbffa4cec8bac7f7e)
+https://www.loom.com/share/cd00a985adce4ebcbffa4cec8bac7f7e
 
 ## High-Level Features
 
