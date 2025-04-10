@@ -34,16 +34,15 @@ class Token {
                 console.log("Using the default account owner to deploy token...")
             }
 
-            if(!this.type){
+            if(this.type === "FUNGIBLE"){
                 //by default, deploy a fungible token
                 const contract = await this.deployFungibleToken();
                 return contract
+            }else{
+                //deploy an NFT.
+                const contract = await this.deployNFT();
+                return contract
             }
-
-            //deploy an NFT.
-            const contract = await this.deployNFT();
-            return contract
-
 
         }catch(e){
             throw e;

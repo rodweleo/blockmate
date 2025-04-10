@@ -14,9 +14,6 @@ contract FungibleToken is ERC20, ERC20Burnable, Ownable {
     string public constant version = "1.0.0";
     string public constant chain = "EduChain";
 
-    // A mapping is a key/value map. Here we store each account's balance.
-    mapping(address => uint256) balances;
-
     // The Transfer event helps off-chain applications understand
     // what happens within your contract.
     // event Transfer(address indexed _from, address indexed _to, uint256 _value);
@@ -38,7 +35,6 @@ contract FungibleToken is ERC20, ERC20Burnable, Ownable {
     ) ERC20(name_, symbol_) Ownable(msg.sender) {
         _decimals = decimals_;
         MAX_SUPPLY = maxSupply_ * 10 ** _decimals;
-        balances[msg.sender] = initialSupply * 10 ** decimals_;
         _mint(msg.sender, initialSupply * 10 ** decimals_);
     }
 
@@ -59,43 +55,11 @@ contract FungibleToken is ERC20, ERC20Burnable, Ownable {
         _mint(to, amount * 10 ** _decimals);
     }
 
-    /**
-     * A function to transfer tokens.
-     *
-     * The `external` modifier makes a function *only* callable from *outside*
-     * the contract.
-     */
-    function transfer(address to, uint256 amount) public override returns (bool) {
-        // Check if the transaction sender has enough tokens.
-        // If `require`'s first argument evaluates to `false`, the
-        // transaction will revert.
-        require(balances[msg.sender] >= amount, "Not enough tokens");
-
-        // Transfer the amount.
-        balances[msg.sender] -= amount;
-        balances[to] += amount;
-
-        // Notify off-chain applications of the transfer.
-        emit Transfer(msg.sender, to, amount);
-
-        return true;
-    }
-
     /// @notice Burn your own tokens
     function burn(uint256 amount) public override {
         uint256 burnAmount = amount * 10 ** _decimals;
         _burn(_msgSender(), burnAmount);
         emit TokenBurned(_msgSender(), burnAmount);
-    }
-
-    /**
-     * Read only function to retrieve the token balance of a given account.
-     *
-     * The `view` modifier indicates that it doesn't modify the contract's
-     * state, which allows us to call it without executing a transaction.
-     */
-    function balanceOf(address account) public view override returns (uint256) {
-        return balances[account];
     }
     
 }

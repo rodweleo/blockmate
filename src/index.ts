@@ -13,7 +13,7 @@ dotenv.config();
 function validateEnvironment(): void {
     const missingVars: string[] = [];
 
-    const requiredVars = ["GOOGLE_API_KEY"];
+    const requiredVars = ["GOOGLE_API_KEY", "EDUCHAIN_OPERATOR_ADDRESS", "EDUCHAIN_OPERATOR_PRIVATE_KEY"];
 
     requiredVars.forEach((varName) => {
         if (!process.env[varName]) {
@@ -41,7 +41,11 @@ async function initializeAgent() {
         });
 
         // Initialize EduchainAgentKit
-        const educhainKit = new EduchainAgentKit();
+        const educhainKit = new EduchainAgentKit({
+            operatorAddress: process.env.EDUCHAIN_OPERATOR_ADDRESS!,
+            privateKey: process.env.EDUCHAIN_OPERATOR_PRIVATE_KEY!,
+            network: "testnet"
+        });
 
         // Create the LangChain-compatible tools
         const tools = createEduchainTools(educhainKit);

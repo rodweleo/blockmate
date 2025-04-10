@@ -268,8 +268,8 @@
       ]
     },
     "C:\\Users\\Christy\\projects\\blockmate\\src\\contracts\\FungibleToken.sol": {
-      "lastModificationDate": 1744196330501,
-      "contentHash": "d709dbe36657d2357d416802b4cc3b55",
+      "lastModificationDate": 1744268412560,
+      "contentHash": "8c605c6f7ac70e1b71b3605ee6a061f8",
       "sourceName": "src/contracts/FungibleToken.sol",
       "solcConfig": {
         "version": "0.8.28",

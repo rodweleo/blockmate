@@ -31,7 +31,7 @@ export class EduchainCreateNFTTool extends Tool {
                 status: "success",
                 transactionHash: result.deploymentTransaction()?.hash,
                 tokenAddress: result.getAddress(),
-                contractURL: `https://edu-chain-testnet.blockscout.com/address/${tokenContractAddress}`
+                contractURL: `https://edu-chain-testnet.blockscout.com/token/${tokenContractAddress}`
             });
         } catch (error: any) {
             return JSON.stringify({

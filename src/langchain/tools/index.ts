@@ -3,7 +3,11 @@ import { EduchainGetSmartContractTool } from './smart-contracts/get_smart_contra
 import { Tool } from "@langchain/core/tools";
 import * as dotenv from "dotenv";
 import { EduchainAgentKit } from "@/agent";
-import { EduchainCreateNFTTool, EduchainGetTokenInfoTool, EduchainGetTokensListTool, EduchainCreateFungibleTokenTool } from "./tokens";
+import { EduchainCreateNFTTool, EduchainGetTokenInfoTool, EduchainGetTokensListTool, 
+    EduchainCreateFungibleTokenTool,
+    EduchainMintFungibleTokenTool,
+    EduchainMintNonFungibleTool
+} from "./tokens";
 import { EduchainGetAddressNftBalanceTool } from "./balances";
 import { EduchainSendEduTool, EduchainGetWalletBalanceTool, EduchainCreateWalletTool } from './wallet';
 
@@ -20,6 +24,8 @@ export function createEduchainTools(educhainKit: EduchainAgentKit): Tool[] {
         new EduchainSendEduTool(educhainKit),
         new EduchainGetWalletBalanceTool(educhainKit),
         new EduchainCreateFungibleTokenTool(educhainKit),
-        new EduchainCreateNFTTool(educhainKit)
+        new EduchainCreateNFTTool(educhainKit),
+        new EduchainMintFungibleTokenTool(educhainKit),
+        new EduchainMintNonFungibleTool(educhainKit)
     ]
 }

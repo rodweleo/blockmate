@@ -98,3 +98,10 @@ export type TokenOptions = {
     type?: TokenType;
     baseURI? : string;
 }
+
+export type MintTokenOptions = {
+    tokenAddress: `0x${string}`;
+    receiver: `0x${string}`;
+    amount?: number;
+    signer?: string
+}
