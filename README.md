@@ -4,11 +4,13 @@
 BlockMate is a collection of LangChain agents and tools for building Decentralized Educational Applications on **EduChain**. It provides a set of pre-built agents and tools that can be easily integrated into your own Decentralized Application, allowing you to quickly build and deploy educational solutions on the **EduChain blockchain**.
 
 ## Intreractive Demos
-### Part 1
-  ![BlockMate Part 1](https://www.loom.com/share/4fc6808b832e4c84a35f557f5142dbb9?sid=9f67a564-9944-4faf-bf30-4e743eec0411)
+## 🎥 BlockMate Demo – Part 1
 
-### Part 2
-  ![BlockMate Part 2](https://www.loom.com/share/cd00a985adce4ebcbffa4cec8bac7f7e?sid=ab28814f-bbd6-45f1-8451-fcaf9190f673)
+[Watch the First Demo](https://www.loom.com/share/4fc6808b832e4c84a35f557f5142dbb9)
+
+### 🎥 BlockMate Demo – Part 2
+[Watch the continous of part 1](https://www.loom.com/share/cd00a985adce4ebcbffa4cec8bac7f7e)
+
 ## High-Level Features
 
 1. Pre-built LangChain agents for on-chain educational applications
